@@ -11,8 +11,6 @@ describe("Buy a t-shirt", () => {
       cy.get("#email").type("aperdomobo@gmail.com")
       cy.get("#passwd").type("WorkshopProtractor")
   
-      // Debes completar la prueba ...
-      
       cy.get("[name=SubmitLogin]").click()
       cy.get("[name=processAddress]").click()
       cy.get("[name=cgv]").click()
@@ -24,4 +22,5 @@ describe("Buy a t-shirt", () => {
         .should("have.text", "Your order on My Store is complete.")
     });
   });
+
   
