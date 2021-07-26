@@ -1,21 +1,20 @@
 class ShopingCartPage{
 
-    private tShirtSelect: string;
-    private processSelectTShirt: string;
+    private tShirtSelectButton: string;
+    private proceedSelectTShirtButton: string;
 
     constructor(){
-        this.tShirtSelect = "[style*=\"display: block;\"] .button-container > a";
-        this.processSelectTShirt = ".cart_navigation span";
+        this.tShirtSelectButton = "[style*=\"display: block;\"] .button-container > a";
+        this.proceedSelectTShirtButton = ".cart_navigation span";
     }
 
-    public addTShirtToCar(): void {
-        cy.get(this.tShirtSelect).click()
+    public addTShirtToCart(): void {
+        cy.get(this.tShirtSelectButton).click()
     }
 
-    public processTShirtSelectIncar(): void {
-        cy.get(this.processSelectTShirt).click()
+    public proceedTShirtSelectInCart(): void {
+        cy.get(this.proceedSelectTShirtButton).click()
     }
-   
-
+    
 }
 export {ShopingCartPage}

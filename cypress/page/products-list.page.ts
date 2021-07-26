@@ -1,13 +1,13 @@
 class ProductsListPage{
 
-    private productsList: string;
+    private tShirtButton: string;
 
     constructor(){
-        this.productsList = "#center_column a.button.ajax_add_to_cart_button.btn.btn-default";
+        this.tShirtButton = "#center_column a.button.ajax_add_to_cart_button.btn.btn-default";
     }
 
-    public goToProductsList(): void {
-        cy.get(this.productsList).click()
+    public selectTShirtOfProductsList(): void {
+        cy.get(this.tShirtButton).click()
     }
 
 }

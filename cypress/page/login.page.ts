@@ -1,28 +1,20 @@
 class LoginPage{
 
-    private email: string;
-    private password: string;
-    private btnLogin: string;
+    private emailTextInput: string;
+    private passwordTextInput: string;
+    private loginButton: string;
 
     constructor(){
-        this.email = "#email";
-        this.password = "#passwd";
-        this.btnLogin = "[name=SubmitLogin]";
+        this.emailTextInput = "#email";
+        this.passwordTextInput = "#passwd";
+        this.loginButton = "[name=SubmitLogin]";
     }
 
-    public putEmail(): void {
-        cy.get(this.email).type("aperdomobo@gmail.com")
+    public login(mail:string, pass:string ):void{
+        cy.get(this.emailTextInput).type(mail)
+        cy.get(this.passwordTextInput).type(pass)
+        cy.get(this.loginButton).click()
     }
 
-    public putPassword(): void {
-        cy.get(this.password).type("WorkshopProtractor")
-    }
-
-    public clickinglogin(): void {
-        cy.get(this.btnLogin).click()
-    }
-
-    
-   
 }
 export {LoginPage}

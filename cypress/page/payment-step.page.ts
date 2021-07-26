@@ -1,25 +1,25 @@
 class PaymentStepPage{
 
-    private bankWire: string;
-    private confirmPay: string;
-    private finishShopping: string;
+    private bankWireAHyperlink: string;
+    private confirmPayButton: string;
+    private finishShoppingPTitle : string;
 
     constructor(){
-        this.bankWire = "[class=bankwire]";
-        this.confirmPay = "#cart_navigation > button";
-        this.finishShopping = "#center_column > div > p > strong";
+        this.bankWireAHyperlink = "[class=bankwire]";
+        this.confirmPayButton = "#cart_navigation > button";
+        this.finishShoppingPTitle = "#center_column > div > p > strong";
     }
 
-    public payingWire(): void {
-        cy.get(this.bankWire).click()
+    public paybyBankWire(): void {
+        cy.get(this.bankWireAHyperlink).click()
     }
 
-    public confirmingPay(): void {
-        cy.get(this.confirmPay).click()
+    public confirmPay(): void {
+        cy.get(this.confirmPayButton).click()
     }
 
-    public finishingShopping():void {
-        cy.get(this.finishShopping).should("have.text", "Your order on My Store is complete.")
+    public getConfirmationTitle() {
+        return cy.get(this.finishShoppingPTitle)
     }
 
 }

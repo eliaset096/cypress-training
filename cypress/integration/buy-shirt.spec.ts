@@ -16,23 +16,21 @@ describe("Buy a t-shirt", () => {
       menuContentPage.visitMenuContentPage()
       menuContentPage.goToTShirtMenu()
 
-      productsListPage.goToProductsList()
+      productsListPage.selectTShirtOfProductsList()
 
-      shopingCartPage.addTShirtToCar()
-      shopingCartPage.processTShirtSelectIncar()
+      shopingCartPage.addTShirtToCart()
+      shopingCartPage.proceedTShirtSelectInCart()
 
-      loginPage.putEmail()
-      loginPage.putPassword()
-      loginPage.clickinglogin()
+      loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor")
 
-      addressStepPage.selectAddress()
+      addressStepPage.confirmAddress()
 
-      shippingstepPage.checkingBox()
-      shippingstepPage.processCarrier()
+      shippingstepPage.acceptTerms()
+      shippingstepPage.proceedCarrier()
 
-      paymentStepPage.payingWire()
-      paymentStepPage.confirmingPay()
-      paymentStepPage.finishingShopping()
+      paymentStepPage.paybyBankWire()
+      paymentStepPage.confirmPay()
+      paymentStepPage.getConfirmationTitle().should("have.text", "Your order on My Store is complete.")
 
     });
   });

@@ -1,13 +1,13 @@
 class AddressStepPage{
 
-    private address: string;
+    private addressButton: string;
 
     constructor(){
-        this.address = "[name=processAddress]";
+        this.addressButton = "[name=processAddress]";
     }
 
-    public selectAddress(): void {
-        cy.get(this.address).click()
+    public confirmAddress(): void {
+        cy.get(this.addressButton).click()
     }
 
 }
