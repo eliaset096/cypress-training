@@ -4,8 +4,9 @@ class ShopingCartPage{
     private proceedSelectTShirtButton: string;
 
     constructor(){
-        this.tShirtSelectButton = "[style*=\"display: block;\"] .button-container > a";
-        this.proceedSelectTShirtButton = ".cart_navigation span";
+        this.tShirtSelectButton = "div.button-container > a.btn.btn-default.button.button-medium";
+        this.proceedSelectTShirtButton = "p.cart_navigation span";
+
     }
 
     public addTShirtToCart(): void {
