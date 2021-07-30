@@ -1,36 +1,43 @@
 
 import { AddressStepPage, LoginPage, MenuContentPage, PaymentStepPage, ProductsListPage, ShippingstepPage, ShopingCartPage } from "../page/index"
 
-const menuContentPage = new MenuContentPage()
-const productsListPage = new ProductsListPage();
-const shopingCartPage = new ShopingCartPage()
-const loginPage = new LoginPage()
-const addressStepPage = new AddressStepPage()
-const shippingstepPage = new ShippingstepPage()
-const paymentStepPage = new PaymentStepPage()
+
 
 describe("Buy a t-shirt", () => {
 
-    it("then the t-shirt should be bought", () => {
+  const menuContentPage = new MenuContentPage()
+  const productsListPage = new ProductsListPage()
+  const shopingCartPage = new ShopingCartPage()
+  const loginPage = new LoginPage()
+  const addressStepPage = new AddressStepPage()
+  const shippingstepPage = new ShippingstepPage()
+  const paymentStepPage = new PaymentStepPage()
 
-      menuContentPage.visitMenuContentPage()
-      menuContentPage.goToTShirtMenu()
+  it("then the t-shirt should be bought", () => {
 
-      productsListPage.selectTShirtOfProductsList()
+    const tShirtsNamesArray: string[] = ["Faded Short Sleeve T-shirts"];
+    const sThirtsNumber = 1; 
 
-      shopingCartPage.addTShirtToCart()
-      shopingCartPage.proceedTShirtSelectInCart()
+    menuContentPage.visitMenuContentPage()
+    menuContentPage.goToTShirtMenu()
+    
+    productsListPage.validateItemsNumber(sThirtsNumber)
+    productsListPage.validateItemsNames(tShirtsNamesArray)
+    productsListPage.selectTShirtOfProductsList()
 
-      loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor")
+    shopingCartPage.addTShirtToCart()
+    shopingCartPage.proceedTShirtSelectInCart()
 
-      addressStepPage.confirmAddress()
+    loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor")
 
-      shippingstepPage.acceptTerms()
-      shippingstepPage.proceedCarrier()
+    addressStepPage.confirmAddress()
 
-      paymentStepPage.paybyBankWire()
-      paymentStepPage.confirmPay()
-      paymentStepPage.getConfirmationTitle().should("have.text", "Your order on My Store is complete.")
+    shippingstepPage.acceptTerms()
+    shippingstepPage.proceedCarrier()
 
-    });
+    paymentStepPage.paybyBankWire()
+    paymentStepPage.confirmPay()
+    paymentStepPage.getConfirmationTitle().should("have.text", "Your order on My Store is complete.")
+
   });
+});

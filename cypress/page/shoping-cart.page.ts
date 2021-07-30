@@ -6,7 +6,6 @@ class ShopingCartPage{
     constructor(){
         this.tShirtSelectButton = "div.button-container > a.btn.btn-default.button.button-medium > span";
         this.proceedSelectTShirtButton = "p.cart_navigation span";
-
     }
 
     public addTShirtToCart(): void {
