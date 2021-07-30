@@ -10,7 +10,6 @@ class ProductsListPage{
         this.tShirtButton = "a.button.ajax_add_to_cart_button.btn.btn-default";
     }
 
-
     getTShirtProducts() :Cypress.Chainable {
         return cy.get(this.tShirtItem)
       }

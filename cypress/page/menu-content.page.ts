@@ -21,8 +21,6 @@ class MenuContentPage {
     public goToDressesMenu(): void {
         cy.get(this.dressesMenu).click()
     }
-
-
-
+    
 }
 export { MenuContentPage }

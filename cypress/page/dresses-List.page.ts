@@ -22,5 +22,4 @@ class DressesListPage {
       })
     } 
 }
-  
 export {DressesListPage}

@@ -1,7 +1,4 @@
-
 import { AddressStepPage, LoginPage, MenuContentPage, PaymentStepPage, ProductsListPage, ShippingstepPage, ShopingCartPage } from "../page/index"
-
-
 
 describe("Buy a t-shirt", () => {
 

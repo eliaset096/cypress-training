@@ -1,6 +1,5 @@
 import { MenuContentPage, DressesListPage } from "../page/index"
 
-
 describe("the user navigates to the dresses page should", () => {
 
   let menuContentPage: MenuContentPage;
@@ -12,7 +11,6 @@ describe("the user navigates to the dresses page should", () => {
   })
 
   it("show the available dresses", () => {
-    // ... realiza la prueba
 
     const dressesNamesArray: string[] = ["Printed Dress", "Printed Dress","Printed Summer Dress", "Printed Summer Dress","Printed Chiffon Dress"];
     const dressesNumber = 5; 
