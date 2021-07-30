@@ -5,9 +5,9 @@ class PaymentStepPage{
     private finishShoppingPTitle : string;
 
     constructor(){
-        this.bankWireAHyperlink = "[class=bankwire]";
-        this.confirmPayButton = "#cart_navigation > button.button.btn.btn-default.button-medium";
-        this.finishShoppingPTitle = "#center_column > div.box > p.cheque-indent > strong.dark";
+        this.bankWireAHyperlink = ".bankwire";
+        this.confirmPayButton = "#cart_navigation span";
+        this.finishShoppingPTitle = "#center_column .cheque-indent strong";
     }
 
     public paybyBankWire(): void {
