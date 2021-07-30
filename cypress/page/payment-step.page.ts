@@ -5,9 +5,9 @@ class PaymentStepPage{
     private finishShoppingPTitle : string;
 
     constructor(){
-        this.bankWireAHyperlink = "[class=bankwire]";
-        this.confirmPayButton = "#cart_navigation > button";
-        this.finishShoppingPTitle = "#center_column > div > p > strong";
+        this.bankWireAHyperlink = ".bankwire";
+        this.confirmPayButton = "#cart_navigation span";
+        this.finishShoppingPTitle = "#center_column .cheque-indent strong";
     }
 
     public paybyBankWire(): void {
@@ -18,7 +18,7 @@ class PaymentStepPage{
         cy.get(this.confirmPayButton).click()
     }
 
-    public getConfirmationTitle() {
+    public getConfirmationTitle(): Cypress.Chainable {
         return cy.get(this.finishShoppingPTitle)
     }
 

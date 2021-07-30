@@ -3,7 +3,8 @@ class ProductsListPage{
     private tShirtButton: string;
 
     constructor(){
-        this.tShirtButton = "#center_column a.button.ajax_add_to_cart_button.btn.btn-default";
+        this.tShirtButton = "a.button.ajax_add_to_cart_button.btn.btn-default";
+
     }
 
     public selectTShirtOfProductsList(): void {
