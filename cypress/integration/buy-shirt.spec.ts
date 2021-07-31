@@ -7,12 +7,10 @@ let loginPage : LoginPage;
 let addressStepPage : AddressStepPage;
 let shippingstepPage : ShippingstepPage;
 let paymentStepPage : PaymentStepPage;
-let tShirtsNamesArray: string[];
 
 describe("Buy a t-shirt", () => {
 
   before(() => {
-    tShirtsNamesArray =  ["Faded Short Sleeve T-shirts"];
     menuContentPage = new MenuContentPage()
     productsListPage = new ProductsListPage()
     shopingCartPage = new ShopingCartPage()
@@ -27,9 +25,6 @@ describe("Buy a t-shirt", () => {
     menuContentPage.visitMenuContentPage()
     menuContentPage.goToTShirtMenu()
     
-    productsListPage.validateItemsNumber(tShirtsNamesArray.length)
-    productsListPage.validateItemsNames(tShirtsNamesArray)
-   
     productsListPage.selectTShirtOfProductsList()
     shopingCartPage.addTShirtToCart()
     shopingCartPage.proceedTShirtSelectInCart()
